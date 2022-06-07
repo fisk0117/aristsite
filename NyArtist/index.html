@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NEWS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="Images\favicon2.ico" href="Images\favicon2.ico">
+  </head>
+  <body>
+    <a class="img" href="index.html">
+      <div class="header"  href="index.html">
+        <img src="Images\logga.png" height="100%" alt="aj tracey" >
+      </div>
+    </a>
+    <div class="dropdown">
+      <button onclick="show()" class="button">&#61;</button>
+      <div id="drop" class="dropdown-content">
+        <div href="index.html">NEWS</div>
+        <div href="tour.html">TOUR</div>
+        <div href="music.html">MUSIC</div>
+        <div href="merch.html">MERCH</div>
+        <div href="band.html">BAND</div>
+      </div>
+    </div>
+
+    <div id="navbar">
+      <div id="nav">
+        <div class="link"><a href="index.html">NEWS</a></div>
+        <div class="link"><a href="tour.html">TOUR</a></div>
+        <div class="link"><a href="music.html">MUSIC</a></div>
+        <div class="link"><a href="merch.html">MERCH</a></div>
+        <div class="link"><a href="band.html">BAND</a></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="slideShow">
+        <div class="slide">
+          <img src="Images\tracey2.jpg" alt="Aj tracey with drum sticks">
+        </div>
+        <div class="slide">
+          <img src="Images\band.jpg" alt="Aj tracey in a band">
+        </div>
+          <div class="overlay">
+        </div>
+      </div>
+      <h1>NEW</h1>
+      <p>AJ Tracey has joined the marching band genre and will play marching music for the foreseeable future.</p>
+      <p>Instead of rapping he’s going to play the drums in his new band.</p>
+      <p>Watch AJ Tracey live on<a class="a" href="tour.html" padding="5px">TOUR</a>.</p>
+      <p>New album by AJ Tracey! View in <a class="a" href="merch.html" padding="5px">MERCH</a>.</p>
+      <img src="Images\tracey3.jpg" alt="aj tracey album cover">
+    </div>
+    <footer>
+      <div class="footer">
+        <img src="Images\logga3.png" alt="aj tracey">
+        <div class="länkar">
+          <a href="https://open.spotify.com/artist/4Xi6LSfFqv26XgP9NKN26U">Spotify</a>
+          <a href="https://music.apple.com/us/artist/aj-tracey/1065154423">Itunes</a>
+          <a href="https://twitter.com/ajtracey">Twitter</a>
+          <a href="https://www.instagram.com/ajtracey/?hl=sv">Instagram</a>
+        </div>
+        <div class="credit" width="16rem">
+          <p>2022 AJ Tracey © - All rights reserved.</p>
+          <p>Designed & Developed by Filip Skaremyr</p>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script>
+      //Navbar
+      window.onscroll = function() {myFunction()};
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+
+      //SlideShow
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("slide");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 10000);
+      }
+
+      //dropdown
+      function show() {
+        document.getElementById("drop").classList.toggle("show");
+      }
+
+      window.onclick = function(event) {
+        if (!event.target.matches('.button')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+    </script>
+  </body>
+</html>
